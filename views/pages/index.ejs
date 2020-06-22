@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+  <div id="page-container">
+    <div class="welcome"><h2>Click on a monster to edit. Use the left side panel to create a new monster.</h2></div>
+    <div id="monster-builder">
+      <div class="monsters-list">
+
+        <div class="monster-card">
+          <div class="card-container add-monster-card">
+            <div class="add-monster">
+              <form action="/add" method="post">
+                <input id="input-monster-name" type='text' name='monstername' value='' placeholder="Name"><br>
+                <label id="label-color" for="color">Color:</label>
+                <input id="input-monster-color" type='color' name='color' value='#da3ba5'><br>
+                <label for="circle">Circle</label>
+                <input class="input-radio" type='radio' name='shape' value='circle'>
+                <label for="square">Square</label>
+                <input class="input-radio" type='radio' name='shape' value='square'><hr class="divider">
+                <label for="happy">Happy</label>
+                <input class="input-radio" type='radio' name='expression' value='happy'>
+                <label for="neutral">Neutral</label>
+                <input class="input-radio" type='radio' name='expression' value='neutral'>
+                <label for="neutral">Angry</label>
+                <input class="input-radio" type='radio' name='expression' value='angry'>
+                <hr class="divider">
+                <label for="true">One Eye</label>
+                <input class="input-radio" type='radio' name='cyclops' value='true'>
+                <label for="false">Two Eyes</label>
+                <input class="input-radio" type='radio' name='cyclops' value='false'>
+                <input type='submit' name='sub' value='Create Monster'>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <% rows.forEach(function(r) { %>
+          <div class="monster-card">
+          <a href="/monsters/<%= r.id %>"> <div class="card-container">
+              <% include ../partials/monster-details.ejs %>
+          </div></a>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+  
+
+<% include ../partials/bootstrap.ejs %>
+</body>
+</html>

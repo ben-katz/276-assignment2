@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+  <div id="page-container">
+    <div class="welcome"><h1>Welcome to Monster Builder</h1></div>
+    <div id="monster-builder">
+      <div class="monsters-list">
+
+        <div class="monster-card">
+            <div class="card-container add-monster-card">
+              <div class="add-monster">
+                <% rows.forEach(function(r) { %>
+                <form action="../monsters/<%= r.id %>" method="post">
+                    <% }); %>
+                  <input id="input-monster-name" type='text' name='monstername' value='' placeholder="Name"><br>
+                  <label id="label-color" for="color">Color:</label>
+                  <input id="input-monster-color" type='color' name='color' value='<% rows.forEach(function(r) { %><%= r.color %><% }); %>'><br>
+                  <label for="circle">Circle</label>
+                  <input class="input-radio" type='radio' name='shape' value='circle'>
+                  <label for="square">Square</label>
+                  <input class="input-radio" type='radio' name='shape' value='square'><hr class="divider">
+                  <label for="happy">Happy</label>
+                  <input class="input-radio" type='radio' name='expression' value='happy'>
+                  <label for="neutral">Neutral</label>
+                  <input class="input-radio" type='radio' name='expression' value='neutral'>
+                  <label for="neutral">Angry</label>
+                  <input class="input-radio" type='radio' name='expression' value='angry'>
+                  <hr class="divider">
+                  <label for="true">One Eye</label>
+                  <input class="input-radio" type='radio' name='cyclops' value='true'>
+                  <label for="false">Two Eyes</label>
+                  <input class="input-radio" type='radio' name='cyclops' value='false'>
+                  <input type='submit' name='sub' value='Update Monster'>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        <% rows.forEach(function(r) { %>
+          <div class="monster-card">
+            <div class="card-container">
+                <% include ../partials/monster-details.ejs %>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+  
+
+<% include ../partials/bootstrap.ejs %>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="monster-details">
+    <p class="monster-id"><%= r.id %></p>
+    <h3 class="monster-name"><%= r.name %></h3>
+    <p class="monster-color">Color: <%= r.color %></p>
+    <p class="monster-shape">Shape: <%= r.shape %></p>
+    <p class="monster-expression">Expression: <%= r.expression %></p>
+    <p class="monster-cyclops">Cyclops: <%= r.cyclops %></p>
+  </div>
+    <div class="monster-drawing <%= r.shape %> <%= r.expression %> <%= r.cyclops %>" style="background-color: <%= r.color %>;">
+        <div class="one-eye">
+            <div class='eye'></div>
+        </div>
+        <div class="two-eye">
+            <div class='eye'></div>
+            <div class='eye'></div>
+        </div>
+    </div>
+    <form id="delete-monster-form" action="/delete/<%= r.id %>">
+        <input type="submit" value="Delete Monster">
+    </form>

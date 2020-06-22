@@ -1,0 +1,101 @@
+body {
+  background-color: #444;
+  color: #fff;
+}
+
+#page-container {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.welcome {
+  text-align: center;
+  margin: 50px;
+}
+
+.monsters-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: top;
+}
+
+.monsters-list .monster-card {
+  flex: 0 0 350px;
+}
+
+.card-container {
+  height: auto;
+  margin: 25px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #444;
+}
+
+.add-monster {
+  display: inline-block;
+}
+
+.input-radio {
+  margin-right: 10px;
+}
+
+.divider {
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.monster-card a:hover {
+  text-decoration: none;
+}
+
+.monster-drawing {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 25px;
+}
+
+p {
+  margin: 0;
+}
+
+#delete-monster-form {
+  margin-top: 20px;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.true .two-eye {
+  display: none;
+}
+
+.false .one-eye {
+  display: none;
+}
+
+/*.happy
+
+.neutral
+
+.angry
+
+.true
+
+.false */

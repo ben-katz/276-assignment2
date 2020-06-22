@@ -1,0 +1,2 @@
+insert into monsters values ('001', 'Mike', '#4cd971', 'circle', 'neutral', true);
+insert into monsters values ('002', 'Sully', '#4ccdd9', 'square', 'happy', false);
